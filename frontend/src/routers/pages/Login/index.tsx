@@ -19,14 +19,14 @@ export default function Login() {
                     <div className="flex flex-col gap-2 w-full mt-5">
                         <label>Email</label>
                         <Input
-                            className="border-none w-full p-6 bg-sky-50"
+                            className="border-none w-full p-6 bg-gray-100 text-gray-900"
                             placeholder="Informe seu Email"
                         />
                     </div>
                     <div className="flex flex-col gap-2 w-full">
                         <label>Senha</label>
                         <Input
-                            className="border-none w-full p-6 bg-sky-50"
+                            className="border-none w-full p-6 bg-gray-100 text-gray-900"
                             placeholder="Informe sua Senha"
                             type="password"
                         />

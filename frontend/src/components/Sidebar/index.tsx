@@ -2,12 +2,11 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Logo from "@/assets/images/popnews.png"
 
-import {
-  CircleDollarSign,
-  Carrot,
-  Menu,
-} from "lucide-react";
+import { Menu } from "lucide-react";
+import { FaHome } from "react-icons/fa";
+import { HiPencil } from "react-icons/hi2";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -16,12 +15,12 @@ export function Sidebar() {
 
   const items = [
     {
-      icon: CircleDollarSign,
+      icon: FaHome,
       label: "Menu Principal",
       path: "/menu",
     },
     {
-      icon: Carrot,
+      icon: HiPencil,
       label: "Posts",
       path: "/posts",
     },
@@ -38,11 +37,8 @@ export function Sidebar() {
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         {!collapsed && (
           <div className="flex items-center space-x-2">
-            {/* <img src={Logo} alt="logo-market-pay" className='h-10 rounded-l-md' /> */}
-            <div>
-              <span className="text-xl font-bold text-white">Pop</span>
-              <span className="text-xl font-bold text-green-500">News</span>
-            </div>
+            <img src={Logo} alt="logo-market-pay" className='h-8' />
+            <span className="text-xl font-bold text-white">PopNews</span>
           </div>
         )}
         <Button
@@ -67,7 +63,7 @@ export function Sidebar() {
                 "w-full justify-start text-left cursor-pointer",
                 isActive
                   ? "bg-green-500 text-white"
-                  : "text-white hover:text-white hover:bg-cyan-500",
+                  : "text-white hover:text-white hover:bg-green-600/70",
                 collapsed && "justify-center px-2"
               )}
               onClick={() => navigate(item.path)}
